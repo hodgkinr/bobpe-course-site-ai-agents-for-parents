@@ -1,6 +1,11 @@
 name: Deploy course site to GitHub Pages
 
 on:
+  push:
+    branches:
+      - main
+    paths:
+      - "site/**"
   workflow_dispatch:
 
 permissions:
@@ -9,11 +14,12 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages
+  group: pages-${{ github.repository }}
   cancel-in-progress: true
 
 jobs:
   deploy:
+    if: github.ref == 'refs/heads/main'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -30,3 +36,12 @@ jobs:
       - name: Deploy Pages artifact
         id: deployment
         uses: actions/deploy-pages@v4
+      - name: Summarize deployment failure
+        if: failure()
+        env:
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          {
+            echo "## GitHub Pages deployment failed"
+            echo "The Pages artifact upload or deployment did not complete successfully. Review the failed step and run logs: ${RUN_URL}"
+          } >> "$GITHUB_STEP_SUMMARY"

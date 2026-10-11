@@ -7,8 +7,8 @@ theme="${1:-${SITE_THEME:-generic}}"
 site_dir="$repo_root/site"
 
 case "$theme" in
-  generic|cu-boulder|colorado-state) ;;
-  *) echo "Theme must be generic, cu-boulder, or colorado-state." >&2; exit 2 ;;
+  generic|cu-boulder|colorado-state|minnesota-carlson) ;;
+  *) echo "Theme must be generic, cu-boulder, colorado-state, or minnesota-carlson." >&2; exit 2 ;;
 esac
 if [[ -L "$site_dir" ]]; then
   echo "Refusing to replace a symlink at the designated site output path." >&2
