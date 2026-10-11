@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en" data-theme="generic"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#34495e"><title>Video 2: Tools Are Capabilities, Not Magic · AI Agents for Parents</title>
+<link rel="stylesheet" href="../../../style.css"></head>
+<body><a class="skip-link" href="#main">Skip to content</a><header class="site-header"><a class="brand" href="../../../index.html">AI Agents for Parents</a><div class="site-tools"><span id="theme-label" class="theme-label">Generic</span><label class="theme-picker">Theme <select id="theme-select"><option value="generic">Generic</option><option value="cu-boulder">CU Boulder inspired</option><option value="colorado-state">Colorado State inspired</option></select></label></div></header>
+<div class="layout"><aside class="course-nav" aria-label="Course navigation"><ul><li><a href="../../../index.html">Course home</a></li><li><a href="../index.html">Week 1: From Answers to Actions</a><ul><li><a href="../week-1-lecture-1/index.html">Video 1: From Answers to Actions</a></li><li><a href="../week-1-reading-1/index.html">A Family Calendar Helper</a></li><li><a href="index.html" aria-current="page">Video 2: Tools Are Capabilities, Not Magic</a></li><li><a href="../week-1-reading-2/index.html">Homework Research Without Handing Over the Homework</a></li><li><a href="../week-1-activity/index.html">Map One Household Task</a></li><li><a href="../week-1-quiz/index.html">Week 1 Scenario Quiz</a></li></ul></li><li><a href="../../week-2/index.html">Week 2: The Harness and the Workflow</a><ul><li><a href="../../week-2/week-2-lecture-1/index.html">Video 3: The Harness Around the Model</a></li><li><a href="../../week-2/week-2-reading-1/index.html">A Family Logistics Coordinator</a></li><li><a href="../../week-2/week-2-lecture-2/index.html">Video 4: Orchestration, Stop Rules, and Handoffs</a></li><li><a href="../../week-2/week-2-reading-2/index.html">The Multi-Step Research Helper</a></li><li><a href="../../week-2/week-2-activity/index.html">Draw a Bounded Workflow</a></li><li><a href="../../week-2/week-2-quiz/index.html">Week 2 Scenario Quiz</a></li></ul></li><li><a href="../../week-3/index.html">Week 3: Autonomy with Care</a><ul><li><a href="../../week-3/week-3-lecture-1/index.html">Video 5: Autonomy Is a Choice About Authority</a></li><li><a href="../../week-3/week-3-reading-1/index.html">Choosing an Autonomy Level</a></li><li><a href="../../week-3/week-3-lecture-2/index.html">Video 6: Oversight, Evaluation, and Recovery</a></li><li><a href="../../week-3/week-3-reading-2/index.html">A Family Agreement for Trying an AI Agent</a></li><li><a href="../../week-3/week-3-activity/index.html">Draft a Family Agent Agreement</a></li><li><a href="../../week-3/week-3-quiz/index.html">Week 3 Scenario Quiz</a></li></ul></li></ul></aside><main id="main"><div class="page-content"><p><a href="../index.html">← Week 1: From Answers to Actions</a></p><h1>Video 2: Tools Are Capabilities, Not Magic</h1><p class="recording-status" role="status">Recording not yet available. Read the lecture script below.</p><p class="objectives"><strong>Learning objectives:</strong> Distinguish a conversational response from a goal-directed workflow that can use tools and take actions.; Explain how instructions, current context, memory, tools, and orchestration shape an agent’s behavior.; Match permissions and human review to an action’s impact, reversibility, uncertainty, privacy, and affected people.</p><section><h2>Content</h2><h1>Video 2: Tools are capabilities, not magic</h1>
+<p><strong>Duration:</strong> approximately 10 minutes <strong>Objectives:</strong> LO1, LO2, LO4 <strong>Purpose:</strong> Help learners reason about tool access and action boundaries.</p>
+<p>Tools let an agent interact with services beyond the conversation: search, calendars, files, messaging, or shopping. A tool is a capability with a specific effect. Access is not neutral; reading, drafting, editing, sending, and purchasing carry different levels of consequence.</p>
+<p>This lecture introduces least privilege, reversibility, and review before external actions. Learners examine a homework research assistant and a grocery-list helper, then consider when a human checkpoint adds real value. The goal is to choose tools that match the task and to check what happened after a tool call rather than treating the model’s description as proof.</p></section><details open><summary>Lecture script</summary><h1>Video 2 script — Tools are capabilities, not magic</h1>
+<p>[Opening: a shopping list beside a phone.]</p>
+<p>Imagine asking an AI assistant, “Help me prepare for the school picnic.” It could suggest a checklist. That is a response. If it can search store inventories, add items to a cart, and place an order, it can take actions. Those capabilities come from tools: specific connections that let software read or change something outside the conversation.</p>
+<p>A tool is not magic. It has an input, an effect, and a result. A search tool sends a query and returns pages. A calendar tool may read events or create them. A messaging tool may draft a note or send it. A shopping tool may compare prices, put items in a cart, or pay. The names sound similar across products, but the exact permissions and effects can differ. Check what a tool is allowed to do before connecting it.</p>
+<p>One useful rule is to give the system the least authority that can accomplish the task. If you want help comparing picnic snacks, it probably does not need permission to purchase them. If you want a shopping list, it might need to read a recipe but not your whole mailbox. If the system can prepare a message, draft access may be enough. Sending is a separate decision.</p>
+<p>[On screen: Read → Draft → Edit → Send → Purchase, with increasing effect.]</p>
+<p>This is not a perfect ladder. Reading a sensitive file may be more serious than changing a low-stakes setting. But it helps us notice that “connect the tool” is not one simple permission. Read, draft, edit, send, and spend represent different abilities. A well-designed system makes those abilities clear, and a careful user asks what is actually enabled.</p>
+<p>Now let’s use a homework research example. A parent asks an agent to help a middle-school student understand why local wetlands matter. The agent searches a few sources, summarizes them, and creates questions for discussion. Search and summarization may be appropriate. The student and parent still need to check whether the sources are credible, whether the summary matches them, and whether the work follows the teacher’s rules. An agent’s output is a starting point for learning, not proof that the assignment is complete.</p>
+<p>What if the agent can upload a completed answer to the school portal? That is a new, consequential action. It may represent the student’s work, affect a grade, or violate a class policy. A sensible boundary is to leave submission with the student or parent, after reviewing the work and the classroom expectations. The tool may make an action possible; it does not make the action appropriate.</p>
+<p>Tools also fail in ordinary ways. A search result may be outdated. A calendar action can target the wrong account. A shopping list may contain a duplicate or a substitute that does not meet an allergy need. A message may go to the wrong group. The system may say “done” even when the underlying service rejected the request. That is why the result of a tool call should be checked, especially when the effect matters.</p>
+<p>Think about reversibility. A draft can be edited or discarded. A calendar event can often be changed, though others may already have seen it. A payment, a school submission, or a public post may be difficult to undo. The harder an action is to reverse, the stronger the case for a person to review it before it happens.</p>
+<p>This is one place where human oversight can be precise. Instead of saying “I’ll supervise the agent,” decide: “The agent may gather public information and prepare a draft. I will check sources and approve anything sent or submitted.” You have created a boundary at the moment the workflow affects someone else or creates a lasting record.</p>
+<p>[Pause for reflection.] Pick a tool an agent might use for a task in your life. What can it read? What can it change? Can it act as you? What evidence would show that the action succeeded? Is there a safer, narrower permission?</p>
+<p>The point is not to avoid tools. Tools can save time and help coordinate steps. The point is to treat each connection as a capability with real effects. Decide what the system needs, keep permissions narrow, review at meaningful boundaries, and verify the result. In the next week, we will see how instructions, memory, and orchestration shape a whole workflow—not just one tool call.</p>
+<p>Let’s compare three versions of the same picnic task. In the first, the assistant suggests a checklist from the details you typed. It does not see your accounts or affect anyone else. In the second, it reads a selected calendar and drafts an invitation. Now it processes family schedule information, but a person can inspect the message. In the third, it reads every calendar, chooses a date, sends invitations, and buys supplies. The task label is still “plan the picnic,” but the access and possible consequences have changed dramatically.</p>
+<p>When you evaluate a tool, ask for concrete verbs. Can it view, copy, create, edit, send, delete, or purchase? Can it act as your account? Does it keep access after the task ends? These questions are easier to answer than “Is the integration safe?” They also help you compare a product’s settings with the task you actually want to do.</p>
+<p>Consider a family with a food allergy. A shopping assistant might identify products from a list, but ingredient labels and manufacturing warnings can change. A model-generated recommendation is not a reliable substitute for reading the package or following the family’s medical guidance. The agent can organize the search; the caregiver checks the consequential details. If the system cannot provide current product information, the appropriate next step is to stop or verify through a trusted source.</p>
+<p>There is a difference between a checkpoint and a rubber stamp. A useful review screen gives you the exact action, the target account, the selected items, and any cost. It leaves time to notice a mistaken quantity or recipient. If you cannot tell what will happen, you are not in a position to approve it.</p>
+<p>A practical permission map can fit on a few lines: “May search public information. May read the calendar I select. May draft an event. Must wait before changing the calendar or contacting anyone. May not make purchases.” This is easier to inspect than a broad promise to “use the assistant carefully.” The map can be narrowed or expanded after you have evidence from a low-risk pilot.</p>
+<p>[Closing: A capable assistant can prepare the action; a responsible person decides when it should happen.]</p></details></div><footer>Course materials · <span id="theme-footer-label">Generic</span></footer><small class="permissions-notice">© 2026 Robert Hodgkinson. All rights reserved. Viewing permitted; reuse requires prior written permission. Contact <a href="mailto:hodgkinr@gmail.com">hodgkinr@gmail.com</a>.</small></main></div>
+<script>if(new URLSearchParams(location.search).get('embed')==='1')document.documentElement.classList.add('embed-mode');</script><script>
+(()=>{
+  const validThemes=['generic','cu-boulder','colorado-state'];
+  const labels={'generic':'Generic','cu-boulder':'CU Boulder inspired','colorado-state':'Colorado State inspired'};
+  const colors={'generic':'#34495e','cu-boulder':'#111111','colorado-state':'#1e4d2b'};
+  const params=new URLSearchParams(location.search);
+  let theme=params.get('theme');
+  if(!validThemes.includes(theme)){
+    try{theme=localStorage.getItem('course-theme')}catch(_){theme=null}
+  }
+  if(!validThemes.includes(theme))theme=document.documentElement.dataset.theme||'generic';
+  const select=document.getElementById('theme-select');
+  const withPreferences=(href)=>{
+    const target=new URL(href,location.href);
+    if(target.origin!==location.origin)return href;
+    const source=new URLSearchParams(location.search);
+    target.searchParams.set('theme',theme);
+    if(source.has('embed')&&!target.searchParams.has('embed'))target.searchParams.set('embed',source.get('embed'));
+    return target.pathname+target.search+target.hash;
+  };
+  const updateLinks=()=>document.querySelectorAll('a[href]').forEach(a=>{
+    const href=a.getAttribute('href');
+    if(!href||href.startsWith('mailto:')||href.startsWith('data:'))return;
+    try{a.setAttribute('href',withPreferences(href))}catch(_){ }
+  });
+  const apply=(next,writeUrl)=>{
+    if(!validThemes.includes(next))return;
+    theme=next;
+    document.documentElement.dataset.theme=theme;
+    if(select){select.value=theme;select.setAttribute('aria-label','Choose institutional theme');}
+    const label=document.getElementById('theme-label');if(label)label.textContent=labels[theme];
+    const footerLabel=document.getElementById('theme-footer-label');if(footerLabel)footerLabel.textContent=labels[theme];
+    const themeColor=document.querySelector('meta[name="theme-color"]');if(themeColor)themeColor.content=colors[theme];
+    try{localStorage.setItem('course-theme',theme)}catch(_){ }
+    if(writeUrl){const nextParams=new URLSearchParams(location.search);nextParams.set('theme',theme);history.replaceState(null,'',location.pathname+'?'+nextParams.toString()+location.hash)}
+    updateLinks();
+  };
+  apply(theme,false);
+  if(select)select.addEventListener('change',()=>apply(select.value,true));
+})();
+</script></body></html>

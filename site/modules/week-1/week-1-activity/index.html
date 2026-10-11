@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en" data-theme="generic"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#34495e"><title>Map One Household Task · AI Agents for Parents</title>
+<link rel="stylesheet" href="../../../style.css"></head>
+<body><a class="skip-link" href="#main">Skip to content</a><header class="site-header"><a class="brand" href="../../../index.html">AI Agents for Parents</a><div class="site-tools"><span id="theme-label" class="theme-label">Generic</span><label class="theme-picker">Theme <select id="theme-select"><option value="generic">Generic</option><option value="cu-boulder">CU Boulder inspired</option><option value="colorado-state">Colorado State inspired</option></select></label></div></header>
+<div class="layout"><aside class="course-nav" aria-label="Course navigation"><ul><li><a href="../../../index.html">Course home</a></li><li><a href="../index.html">Week 1: From Answers to Actions</a><ul><li><a href="../week-1-lecture-1/index.html">Video 1: From Answers to Actions</a></li><li><a href="../week-1-reading-1/index.html">A Family Calendar Helper</a></li><li><a href="../week-1-lecture-2/index.html">Video 2: Tools Are Capabilities, Not Magic</a></li><li><a href="../week-1-reading-2/index.html">Homework Research Without Handing Over the Homework</a></li><li><a href="index.html" aria-current="page">Map One Household Task</a></li><li><a href="../week-1-quiz/index.html">Week 1 Scenario Quiz</a></li></ul></li><li><a href="../../week-2/index.html">Week 2: The Harness and the Workflow</a><ul><li><a href="../../week-2/week-2-lecture-1/index.html">Video 3: The Harness Around the Model</a></li><li><a href="../../week-2/week-2-reading-1/index.html">A Family Logistics Coordinator</a></li><li><a href="../../week-2/week-2-lecture-2/index.html">Video 4: Orchestration, Stop Rules, and Handoffs</a></li><li><a href="../../week-2/week-2-reading-2/index.html">The Multi-Step Research Helper</a></li><li><a href="../../week-2/week-2-activity/index.html">Draw a Bounded Workflow</a></li><li><a href="../../week-2/week-2-quiz/index.html">Week 2 Scenario Quiz</a></li></ul></li><li><a href="../../week-3/index.html">Week 3: Autonomy with Care</a><ul><li><a href="../../week-3/week-3-lecture-1/index.html">Video 5: Autonomy Is a Choice About Authority</a></li><li><a href="../../week-3/week-3-reading-1/index.html">Choosing an Autonomy Level</a></li><li><a href="../../week-3/week-3-lecture-2/index.html">Video 6: Oversight, Evaluation, and Recovery</a></li><li><a href="../../week-3/week-3-reading-2/index.html">A Family Agreement for Trying an AI Agent</a></li><li><a href="../../week-3/week-3-activity/index.html">Draft a Family Agent Agreement</a></li><li><a href="../../week-3/week-3-quiz/index.html">Week 3 Scenario Quiz</a></li></ul></li></ul></aside><main id="main"><div class="page-content"><p><a href="../index.html">← Week 1: From Answers to Actions</a></p><h1>Map One Household Task</h1><p class="objectives"><strong>Learning objectives:</strong> Design a useful multi-step workflow with relevant information, narrow capabilities, checks, and stop conditions.; Match permissions and human review to an action’s impact, reversibility, uncertainty, privacy, and affected people.</p><section><h2>Content</h2><h1>Activity: Map one household task</h1>
+<p>Choose a recurring task such as planning rides, preparing a meal plan, or organizing a family event. Do not enter private family details into an AI tool.</p>
+<ol>
+<li>State the goal in one sentence.</li>
+<li>List the minimum information needed.</li>
+<li>Mark each step as <strong>suggest</strong>, <strong>read</strong>, <strong>draft</strong>, <strong>change</strong>, or <strong>send/spend</strong>.</li>
+<li>Identify what evidence would show that each important step worked.</li>
+<li>Choose where a person must review or approve.</li>
+<li>Write what the helper should do if information is missing or contradictory.</li>
+</ol>
+<p>Bring the map to the next module. You can use a paper sketch; no product or account connection is required.</p></section></div><footer>Course materials · <span id="theme-footer-label">Generic</span></footer><small class="permissions-notice">© 2026 Robert Hodgkinson. All rights reserved. Viewing permitted; reuse requires prior written permission. Contact <a href="mailto:hodgkinr@gmail.com">hodgkinr@gmail.com</a>.</small></main></div>
+<script>if(new URLSearchParams(location.search).get('embed')==='1')document.documentElement.classList.add('embed-mode');</script><script>
+(()=>{
+  const validThemes=['generic','cu-boulder','colorado-state'];
+  const labels={'generic':'Generic','cu-boulder':'CU Boulder inspired','colorado-state':'Colorado State inspired'};
+  const colors={'generic':'#34495e','cu-boulder':'#111111','colorado-state':'#1e4d2b'};
+  const params=new URLSearchParams(location.search);
+  let theme=params.get('theme');
+  if(!validThemes.includes(theme)){
+    try{theme=localStorage.getItem('course-theme')}catch(_){theme=null}
+  }
+  if(!validThemes.includes(theme))theme=document.documentElement.dataset.theme||'generic';
+  const select=document.getElementById('theme-select');
+  const withPreferences=(href)=>{
+    const target=new URL(href,location.href);
+    if(target.origin!==location.origin)return href;
+    const source=new URLSearchParams(location.search);
+    target.searchParams.set('theme',theme);
+    if(source.has('embed')&&!target.searchParams.has('embed'))target.searchParams.set('embed',source.get('embed'));
+    return target.pathname+target.search+target.hash;
+  };
+  const updateLinks=()=>document.querySelectorAll('a[href]').forEach(a=>{
+    const href=a.getAttribute('href');
+    if(!href||href.startsWith('mailto:')||href.startsWith('data:'))return;
+    try{a.setAttribute('href',withPreferences(href))}catch(_){ }
+  });
+  const apply=(next,writeUrl)=>{
+    if(!validThemes.includes(next))return;
+    theme=next;
+    document.documentElement.dataset.theme=theme;
+    if(select){select.value=theme;select.setAttribute('aria-label','Choose institutional theme');}
+    const label=document.getElementById('theme-label');if(label)label.textContent=labels[theme];
+    const footerLabel=document.getElementById('theme-footer-label');if(footerLabel)footerLabel.textContent=labels[theme];
+    const themeColor=document.querySelector('meta[name="theme-color"]');if(themeColor)themeColor.content=colors[theme];
+    try{localStorage.setItem('course-theme',theme)}catch(_){ }
+    if(writeUrl){const nextParams=new URLSearchParams(location.search);nextParams.set('theme',theme);history.replaceState(null,'',location.pathname+'?'+nextParams.toString()+location.hash)}
+    updateLinks();
+  };
+  apply(theme,false);
+  if(select)select.addEventListener('change',()=>apply(select.value,true));
+})();
+</script></body></html>

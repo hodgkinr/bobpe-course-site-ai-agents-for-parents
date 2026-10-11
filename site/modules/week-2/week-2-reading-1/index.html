@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en" data-theme="generic"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#34495e"><title>A Family Logistics Coordinator · AI Agents for Parents</title>
+<link rel="stylesheet" href="../../../style.css"></head>
+<body><a class="skip-link" href="#main">Skip to content</a><header class="site-header"><a class="brand" href="../../../index.html">AI Agents for Parents</a><div class="site-tools"><span id="theme-label" class="theme-label">Generic</span><label class="theme-picker">Theme <select id="theme-select"><option value="generic">Generic</option><option value="cu-boulder">CU Boulder inspired</option><option value="colorado-state">Colorado State inspired</option></select></label></div></header>
+<div class="layout"><aside class="course-nav" aria-label="Course navigation"><ul><li><a href="../../../index.html">Course home</a></li><li><a href="../../week-1/index.html">Week 1: From Answers to Actions</a><ul><li><a href="../../week-1/week-1-lecture-1/index.html">Video 1: From Answers to Actions</a></li><li><a href="../../week-1/week-1-reading-1/index.html">A Family Calendar Helper</a></li><li><a href="../../week-1/week-1-lecture-2/index.html">Video 2: Tools Are Capabilities, Not Magic</a></li><li><a href="../../week-1/week-1-reading-2/index.html">Homework Research Without Handing Over the Homework</a></li><li><a href="../../week-1/week-1-activity/index.html">Map One Household Task</a></li><li><a href="../../week-1/week-1-quiz/index.html">Week 1 Scenario Quiz</a></li></ul></li><li><a href="../index.html">Week 2: The Harness and the Workflow</a><ul><li><a href="../week-2-lecture-1/index.html">Video 3: The Harness Around the Model</a></li><li><a href="index.html" aria-current="page">A Family Logistics Coordinator</a></li><li><a href="../week-2-lecture-2/index.html">Video 4: Orchestration, Stop Rules, and Handoffs</a></li><li><a href="../week-2-reading-2/index.html">The Multi-Step Research Helper</a></li><li><a href="../week-2-activity/index.html">Draw a Bounded Workflow</a></li><li><a href="../week-2-quiz/index.html">Week 2 Scenario Quiz</a></li></ul></li><li><a href="../../week-3/index.html">Week 3: Autonomy with Care</a><ul><li><a href="../../week-3/week-3-lecture-1/index.html">Video 5: Autonomy Is a Choice About Authority</a></li><li><a href="../../week-3/week-3-reading-1/index.html">Choosing an Autonomy Level</a></li><li><a href="../../week-3/week-3-lecture-2/index.html">Video 6: Oversight, Evaluation, and Recovery</a></li><li><a href="../../week-3/week-3-reading-2/index.html">A Family Agreement for Trying an AI Agent</a></li><li><a href="../../week-3/week-3-activity/index.html">Draft a Family Agent Agreement</a></li><li><a href="../../week-3/week-3-quiz/index.html">Week 3 Scenario Quiz</a></li></ul></li></ul></aside><main id="main"><div class="page-content"><p><a href="../index.html">← Week 2: The Harness and the Workflow</a></p><h1>A Family Logistics Coordinator</h1><p class="objectives"><strong>Learning objectives:</strong> Explain how instructions, current context, memory, tools, and orchestration shape an agent’s behavior.; Design a useful multi-step workflow with relevant information, narrow capabilities, checks, and stop conditions.; Match permissions and human review to an action’s impact, reversibility, uncertainty, privacy, and affected people.; Evaluate an agent’s result against evidence and the original goal, then choose to accept, revise, retry, or stop.</p><section><h2>Content</h2><h1>A family logistics coordinator, designed one boundary at a time</h1>
+<p><strong>Purpose:</strong> Show how the parts of an agent harness fit together in a multi-step task. <strong>Reading time:</strong> 6–8 minutes <strong>Objectives:</strong> LO2, LO3, LO4, LO5</p>
+<p>A family has a weekend tournament in another town. Someone needs to check the schedule, estimate when to leave, find a nearby place for lunch, and prepare a message for relatives. It is a real coordination problem: multiple sources, a sequence of steps, and several people affected. It is also a useful place to practice designing an agent before handing it authority.</p>
+<h2>Start with a goal and a finish line</h2>
+<p>“Handle the tournament weekend” is too broad. A bounded goal could be: “Prepare a draft itinerary using the schedule I provide and public map information. Flag uncertainties. Do not book, pay, or message anyone.” The finish line is an itinerary ready for a parent to review, not an automatically completed weekend.</p>
+<p>The instructions now identify the requested output, the allowed sources, and the actions that are off limits. They also say what should happen when the information is unclear: flag it, rather than fill in the blank with a guess.</p>
+<h2>Give each step the right context</h2>
+<p>The agent may need the venue address, game times, estimated driving time, and the family’s chosen lunch window. It probably does not need the child’s full school record or access to all family messages. If the schedule is an image or PDF, the agent should show the extracted times so the parent can confirm them. If a map estimate omits parking or event traffic, the itinerary should say so.</p>
+<p>Current task context and saved memory play different roles. A current instruction might specify, “We need a 20-minute buffer this Saturday.” A saved preference might say the family usually prefers vegetarian food. Both can be useful, but a remembered preference should be visible and changeable. If the trip is unusual, ask rather than assume the preference applies.</p>
+<h2>Sequence the work</h2>
+<p>A reasonable workflow is: read the provided event schedule; confirm the dates and venue; retrieve a travel estimate; identify a few lunch options; draft a timeline; list assumptions and missing information. The agent can check the result against the original schedule before returning it.</p>
+<p>Notice how each step has a source and an output. The travel estimate comes from a map service, but the event times come from the schedule. The restaurant list is a set of suggestions, not a reservation. If a source is inaccessible, the agent can report that instead of quietly substituting an unknown source.</p>
+<h2>Treat memory and tools carefully</h2>
+<p>A map connection may expose a location. A restaurant service may show recent searches. A messaging tool may be able to contact relatives. These are separate capabilities. A workflow that only prepares an itinerary has no reason to send messages or make reservations. Least privilege means granting only what the current task needs, then removing access when it is no longer needed.</p>
+<p>The agent could draft a message that says when the family expects to arrive. A parent should check the time and recipients before sending. If the itinerary includes a child’s location or schedule, sharing it has privacy implications. Ask who needs the information and how much detail is appropriate.</p>
+<h2>Check what “done” means</h2>
+<p>A formatted itinerary is not evidence that every detail is correct. Compare the games against the source schedule. Check travel estimates against the real event location and current conditions. Confirm that the lunch option is open and meets any dietary needs. Then decide which parts to use. If a source is missing or conflicting, keep the uncertainty visible.</p>
+<p>The same design pattern works for a school open house, a family visit, or a volunteer event. Describe the task narrowly, give relevant context, sequence steps that can be checked, and stop before the workflow makes commitments. As experience grows, a family may choose to automate a low-impact step, but it should do so deliberately.</p>
+<p>An agent harness is not a technical mystery. It is the practical arrangement of instructions, information, memory, tools, and stop rules. Making those pieces visible helps a family decide whether the system is ready for a task—and which parts still belong to a person.</p></section></div><footer>Course materials · <span id="theme-footer-label">Generic</span></footer><small class="permissions-notice">© 2026 Robert Hodgkinson. All rights reserved. Viewing permitted; reuse requires prior written permission. Contact <a href="mailto:hodgkinr@gmail.com">hodgkinr@gmail.com</a>.</small></main></div>
+<script>if(new URLSearchParams(location.search).get('embed')==='1')document.documentElement.classList.add('embed-mode');</script><script>
+(()=>{
+  const validThemes=['generic','cu-boulder','colorado-state'];
+  const labels={'generic':'Generic','cu-boulder':'CU Boulder inspired','colorado-state':'Colorado State inspired'};
+  const colors={'generic':'#34495e','cu-boulder':'#111111','colorado-state':'#1e4d2b'};
+  const params=new URLSearchParams(location.search);
+  let theme=params.get('theme');
+  if(!validThemes.includes(theme)){
+    try{theme=localStorage.getItem('course-theme')}catch(_){theme=null}
+  }
+  if(!validThemes.includes(theme))theme=document.documentElement.dataset.theme||'generic';
+  const select=document.getElementById('theme-select');
+  const withPreferences=(href)=>{
+    const target=new URL(href,location.href);
+    if(target.origin!==location.origin)return href;
+    const source=new URLSearchParams(location.search);
+    target.searchParams.set('theme',theme);
+    if(source.has('embed')&&!target.searchParams.has('embed'))target.searchParams.set('embed',source.get('embed'));
+    return target.pathname+target.search+target.hash;
+  };
+  const updateLinks=()=>document.querySelectorAll('a[href]').forEach(a=>{
+    const href=a.getAttribute('href');
+    if(!href||href.startsWith('mailto:')||href.startsWith('data:'))return;
+    try{a.setAttribute('href',withPreferences(href))}catch(_){ }
+  });
+  const apply=(next,writeUrl)=>{
+    if(!validThemes.includes(next))return;
+    theme=next;
+    document.documentElement.dataset.theme=theme;
+    if(select){select.value=theme;select.setAttribute('aria-label','Choose institutional theme');}
+    const label=document.getElementById('theme-label');if(label)label.textContent=labels[theme];
+    const footerLabel=document.getElementById('theme-footer-label');if(footerLabel)footerLabel.textContent=labels[theme];
+    const themeColor=document.querySelector('meta[name="theme-color"]');if(themeColor)themeColor.content=colors[theme];
+    try{localStorage.setItem('course-theme',theme)}catch(_){ }
+    if(writeUrl){const nextParams=new URLSearchParams(location.search);nextParams.set('theme',theme);history.replaceState(null,'',location.pathname+'?'+nextParams.toString()+location.hash)}
+    updateLinks();
+  };
+  apply(theme,false);
+  if(select)select.addEventListener('change',()=>apply(select.value,true));
+})();
+</script></body></html>

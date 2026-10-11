@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en" data-theme="generic"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#34495e"><title>The Multi-Step Research Helper · AI Agents for Parents</title>
+<link rel="stylesheet" href="../../../style.css"></head>
+<body><a class="skip-link" href="#main">Skip to content</a><header class="site-header"><a class="brand" href="../../../index.html">AI Agents for Parents</a><div class="site-tools"><span id="theme-label" class="theme-label">Generic</span><label class="theme-picker">Theme <select id="theme-select"><option value="generic">Generic</option><option value="cu-boulder">CU Boulder inspired</option><option value="colorado-state">Colorado State inspired</option></select></label></div></header>
+<div class="layout"><aside class="course-nav" aria-label="Course navigation"><ul><li><a href="../../../index.html">Course home</a></li><li><a href="../../week-1/index.html">Week 1: From Answers to Actions</a><ul><li><a href="../../week-1/week-1-lecture-1/index.html">Video 1: From Answers to Actions</a></li><li><a href="../../week-1/week-1-reading-1/index.html">A Family Calendar Helper</a></li><li><a href="../../week-1/week-1-lecture-2/index.html">Video 2: Tools Are Capabilities, Not Magic</a></li><li><a href="../../week-1/week-1-reading-2/index.html">Homework Research Without Handing Over the Homework</a></li><li><a href="../../week-1/week-1-activity/index.html">Map One Household Task</a></li><li><a href="../../week-1/week-1-quiz/index.html">Week 1 Scenario Quiz</a></li></ul></li><li><a href="../index.html">Week 2: The Harness and the Workflow</a><ul><li><a href="../week-2-lecture-1/index.html">Video 3: The Harness Around the Model</a></li><li><a href="../week-2-reading-1/index.html">A Family Logistics Coordinator</a></li><li><a href="../week-2-lecture-2/index.html">Video 4: Orchestration, Stop Rules, and Handoffs</a></li><li><a href="index.html" aria-current="page">The Multi-Step Research Helper</a></li><li><a href="../week-2-activity/index.html">Draw a Bounded Workflow</a></li><li><a href="../week-2-quiz/index.html">Week 2 Scenario Quiz</a></li></ul></li><li><a href="../../week-3/index.html">Week 3: Autonomy with Care</a><ul><li><a href="../../week-3/week-3-lecture-1/index.html">Video 5: Autonomy Is a Choice About Authority</a></li><li><a href="../../week-3/week-3-reading-1/index.html">Choosing an Autonomy Level</a></li><li><a href="../../week-3/week-3-lecture-2/index.html">Video 6: Oversight, Evaluation, and Recovery</a></li><li><a href="../../week-3/week-3-reading-2/index.html">A Family Agreement for Trying an AI Agent</a></li><li><a href="../../week-3/week-3-activity/index.html">Draft a Family Agent Agreement</a></li><li><a href="../../week-3/week-3-quiz/index.html">Week 3 Scenario Quiz</a></li></ul></li></ul></aside><main id="main"><div class="page-content"><p><a href="../index.html">← Week 2: The Harness and the Workflow</a></p><h1>The Multi-Step Research Helper</h1><p class="objectives"><strong>Learning objectives:</strong> Explain how instructions, current context, memory, tools, and orchestration shape an agent’s behavior.; Design a useful multi-step workflow with relevant information, narrow capabilities, checks, and stop conditions.; Evaluate an agent’s result against evidence and the original goal, then choose to accept, revise, retry, or stop.</p><section><h2>Content</h2><h1>The multi-step research helper: orchestration without runaway automation</h1>
+<p><strong>Purpose:</strong> Practice sequencing, handoffs, and stop conditions in a research task. <strong>Reading time:</strong> 6–8 minutes <strong>Objectives:</strong> LO2, LO3, LO5</p>
+<p>A parent wants to compare summer programs for a teenager. The task involves dates, location, cost, eligibility, and a child’s interests. A research agent could gather public information and organize it. But the task can grow quickly: search programs, compare reviews, fill out forms, contact organizers, reserve a place, and pay a deposit. A sensible design defines where the research ends.</p>
+<h2>Give the workflow a finish line</h2>
+<p>A bounded request might be: “Find up to five programs within the travel area I specify. For each, list the official source, dates, age range, published cost, and a question we should confirm. Do not create an account, contact anyone, or register.” Now the output is a comparison table that a parent and teenager can discuss.</p>
+<p>The finish line is not “choose the best program.” That decision depends on priorities the agent may not know: the student’s interest, family schedule, accessibility, and budget. The system can make comparisons easier while the people involved make the choice.</p>
+<h2>Sequence steps and make dependencies clear</h2>
+<p>First, gather the student’s general interests and the travel radius without including unnecessary personal information. Next, search official program pages. Then extract dates, eligibility, and cost. Finally, compare the results with the requested constraints and identify missing details. Searching official sources before reading informal reviews helps separate published facts from opinions.</p>
+<p>The agent should not treat a missing price as zero or a sold-out session as available. It can mark the item “not found” and keep going, or ask whether the parent wants to contact the organizer. A deliberate branch is safer than an invented answer.</p>
+<h2>Set retry and stop rules</h2>
+<p>A search may return duplicate programs or outdated pages. A bounded retry might allow one reformulated search if fewer than three programs meet the criteria. If the official page still cannot confirm a detail, the agent should report the gap. It should not keep searching indefinitely or switch to a less reliable source without saying so.</p>
+<p>Stop rules matter when actions are involved. A research workflow should stop before creating an account, submitting an application, sharing the student’s details, or paying a deposit. Those steps create records and commitments. The family should review the information and decide whether to proceed.</p>
+<h2>Keep handoffs understandable</h2>
+<p>If a second tool summarizes reviews, it should receive the program names and the question being asked, not the student’s full profile. The final report should identify which facts came from official pages and which points came from reviews. If two sources disagree, show the disagreement. Handoffs should preserve sources and uncertainty rather than turning a chain of summaries into an unsupported conclusion.</p>
+<p>A multi-agent system might assign one helper to official program pages and another to reviews. That division could be useful for a large search, but it adds coordination overhead. For a handful of programs, one clear workflow may be easier to supervise. Choose complexity only when it adds value.</p>
+<h2>Evaluate the result against the original task</h2>
+<p>Before relying on the comparison, check that each option meets the age and travel constraints. Open the official pages for dates, eligibility, and cost. Notice whether a deadline is current. Ask the teenager whether the options are actually appealing. Then decide what to verify directly with the organizer.</p>
+<p>If the output is incomplete, there are several reasonable next moves: narrow the search, ask for citations, revise the constraints, contact an official source yourself, or stop. The agent’s next step should not be “do more” by default.</p>
+<p>A good orchestrated workflow makes the process easier to inspect. It states its goal, orders the steps, limits retries, preserves evidence, and hands decisions back to people when the stakes or uncertainty rise. That approach can help with program research, travel planning, or a home renovation shortlist—without pretending that a system can decide what matters most to a family.</p></section></div><footer>Course materials · <span id="theme-footer-label">Generic</span></footer><small class="permissions-notice">© 2026 Robert Hodgkinson. All rights reserved. Viewing permitted; reuse requires prior written permission. Contact <a href="mailto:hodgkinr@gmail.com">hodgkinr@gmail.com</a>.</small></main></div>
+<script>if(new URLSearchParams(location.search).get('embed')==='1')document.documentElement.classList.add('embed-mode');</script><script>
+(()=>{
+  const validThemes=['generic','cu-boulder','colorado-state'];
+  const labels={'generic':'Generic','cu-boulder':'CU Boulder inspired','colorado-state':'Colorado State inspired'};
+  const colors={'generic':'#34495e','cu-boulder':'#111111','colorado-state':'#1e4d2b'};
+  const params=new URLSearchParams(location.search);
+  let theme=params.get('theme');
+  if(!validThemes.includes(theme)){
+    try{theme=localStorage.getItem('course-theme')}catch(_){theme=null}
+  }
+  if(!validThemes.includes(theme))theme=document.documentElement.dataset.theme||'generic';
+  const select=document.getElementById('theme-select');
+  const withPreferences=(href)=>{
+    const target=new URL(href,location.href);
+    if(target.origin!==location.origin)return href;
+    const source=new URLSearchParams(location.search);
+    target.searchParams.set('theme',theme);
+    if(source.has('embed')&&!target.searchParams.has('embed'))target.searchParams.set('embed',source.get('embed'));
+    return target.pathname+target.search+target.hash;
+  };
+  const updateLinks=()=>document.querySelectorAll('a[href]').forEach(a=>{
+    const href=a.getAttribute('href');
+    if(!href||href.startsWith('mailto:')||href.startsWith('data:'))return;
+    try{a.setAttribute('href',withPreferences(href))}catch(_){ }
+  });
+  const apply=(next,writeUrl)=>{
+    if(!validThemes.includes(next))return;
+    theme=next;
+    document.documentElement.dataset.theme=theme;
+    if(select){select.value=theme;select.setAttribute('aria-label','Choose institutional theme');}
+    const label=document.getElementById('theme-label');if(label)label.textContent=labels[theme];
+    const footerLabel=document.getElementById('theme-footer-label');if(footerLabel)footerLabel.textContent=labels[theme];
+    const themeColor=document.querySelector('meta[name="theme-color"]');if(themeColor)themeColor.content=colors[theme];
+    try{localStorage.setItem('course-theme',theme)}catch(_){ }
+    if(writeUrl){const nextParams=new URLSearchParams(location.search);nextParams.set('theme',theme);history.replaceState(null,'',location.pathname+'?'+nextParams.toString()+location.hash)}
+    updateLinks();
+  };
+  apply(theme,false);
+  if(select)select.addEventListener('change',()=>apply(select.value,true));
+})();
+</script></body></html>

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en" data-theme="generic"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#34495e"><title>Video 4: Orchestration, Stop Rules, and Handoffs · AI Agents for Parents</title>
+<link rel="stylesheet" href="../../../style.css"></head>
+<body><a class="skip-link" href="#main">Skip to content</a><header class="site-header"><a class="brand" href="../../../index.html">AI Agents for Parents</a><div class="site-tools"><span id="theme-label" class="theme-label">Generic</span><label class="theme-picker">Theme <select id="theme-select"><option value="generic">Generic</option><option value="cu-boulder">CU Boulder inspired</option><option value="colorado-state">Colorado State inspired</option></select></label></div></header>
+<div class="layout"><aside class="course-nav" aria-label="Course navigation"><ul><li><a href="../../../index.html">Course home</a></li><li><a href="../../week-1/index.html">Week 1: From Answers to Actions</a><ul><li><a href="../../week-1/week-1-lecture-1/index.html">Video 1: From Answers to Actions</a></li><li><a href="../../week-1/week-1-reading-1/index.html">A Family Calendar Helper</a></li><li><a href="../../week-1/week-1-lecture-2/index.html">Video 2: Tools Are Capabilities, Not Magic</a></li><li><a href="../../week-1/week-1-reading-2/index.html">Homework Research Without Handing Over the Homework</a></li><li><a href="../../week-1/week-1-activity/index.html">Map One Household Task</a></li><li><a href="../../week-1/week-1-quiz/index.html">Week 1 Scenario Quiz</a></li></ul></li><li><a href="../index.html">Week 2: The Harness and the Workflow</a><ul><li><a href="../week-2-lecture-1/index.html">Video 3: The Harness Around the Model</a></li><li><a href="../week-2-reading-1/index.html">A Family Logistics Coordinator</a></li><li><a href="index.html" aria-current="page">Video 4: Orchestration, Stop Rules, and Handoffs</a></li><li><a href="../week-2-reading-2/index.html">The Multi-Step Research Helper</a></li><li><a href="../week-2-activity/index.html">Draw a Bounded Workflow</a></li><li><a href="../week-2-quiz/index.html">Week 2 Scenario Quiz</a></li></ul></li><li><a href="../../week-3/index.html">Week 3: Autonomy with Care</a><ul><li><a href="../../week-3/week-3-lecture-1/index.html">Video 5: Autonomy Is a Choice About Authority</a></li><li><a href="../../week-3/week-3-reading-1/index.html">Choosing an Autonomy Level</a></li><li><a href="../../week-3/week-3-lecture-2/index.html">Video 6: Oversight, Evaluation, and Recovery</a></li><li><a href="../../week-3/week-3-reading-2/index.html">A Family Agreement for Trying an AI Agent</a></li><li><a href="../../week-3/week-3-activity/index.html">Draft a Family Agent Agreement</a></li><li><a href="../../week-3/week-3-quiz/index.html">Week 3 Scenario Quiz</a></li></ul></li></ul></aside><main id="main"><div class="page-content"><p><a href="../index.html">← Week 2: The Harness and the Workflow</a></p><h1>Video 4: Orchestration, Stop Rules, and Handoffs</h1><p class="recording-status" role="status">Recording not yet available. Read the lecture script below.</p><p class="objectives"><strong>Learning objectives:</strong> Explain how instructions, current context, memory, tools, and orchestration shape an agent’s behavior.; Design a useful multi-step workflow with relevant information, narrow capabilities, checks, and stop conditions.; Evaluate an agent’s result against evidence and the original goal, then choose to accept, revise, retry, or stop.</p><section><h2>Content</h2><h1>Video 4: Orchestration, stop rules, and handoffs</h1>
+<p><strong>Duration:</strong> approximately 10 minutes <strong>Objectives:</strong> LO2, LO3, LO5 <strong>Purpose:</strong> Show how multi-step tasks are coordinated and how to prevent a workflow from continuing past its useful boundary.</p>
+<p>Orchestration is the coordination of steps, tools, and sometimes specialized agents. A workflow may run in a fixed sequence, branch when information differs, or repeat a step until a condition is met. Every loop needs a purpose and a stopping condition. Without clear limits, systems may repeat searches, act on weak assumptions, or make unnecessary changes.</p>
+<p>The lecture uses a family trip-planning task to introduce checkpoints, handoffs, fallback paths, and bounded retries. Learners consider how to divide the work, when a specialist tool is appropriate, and how a human can intervene if a source is unavailable or a conflict appears.</p></section><details open><summary>Lecture script</summary><h1>Video 4 script — Orchestration, stop rules, and handoffs</h1>
+<p>[Opening: a map with several stops and a visible “review here” marker.]</p>
+<p>An agent can be asked to do more than one thing. It might gather information, compare choices, prepare a plan, and ask for approval. The coordination of those steps is called orchestration. You do not need to build software to reason about it. You already orchestrate tasks when you decide what must happen first, what can happen in parallel, and where another person should check your work.</p>
+<p>Let’s return to the tournament weekend. The family wants an itinerary. First, the agent reads the event schedule. Next, it checks travel times. Then it finds lunch options and drafts a timeline. Finally, it reports assumptions and asks the parent to review. That is a simple sequence: the travel and lunch steps depend on knowing the venue and schedule.</p>
+<p>Some steps can happen at the same time. Once the venue is known, the system could find parking information and lunch options in parallel. That may save time, but it also means there are two sources to check. More moving parts can make a workflow faster while making its results harder to inspect.</p>
+<p>A workflow can also branch. If the event address is missing, the agent should ask for it or stop with a clear note. If the schedule lists two possible start times, it should show both rather than choose one. If a restaurant’s hours cannot be verified, it can label that option as uncertain. A branch is simply a rule that says what to do when the situation differs from the expected path.</p>
+<p>[On screen: Read schedule → Check venue → (map estimate + lunch ideas) → Draft itinerary → Parent reviews.]</p>
+<p>A useful workflow has a finish line. For the itinerary, that could be “return a draft with sources and unanswered questions.” Without a finish line, a system might keep searching for a perfect restaurant, repeatedly adjust a route, or make extra suggestions that do not help. A loop needs an explicit reason to continue, a maximum number of tries, and a condition that tells the system to stop.</p>
+<p>This is especially important when an agent can use tools. Suppose it searches for a restaurant, cannot confirm availability, and keeps trying slightly different queries. That may be fine for a low-stakes lookup, up to a limit. It is not fine if the system then makes a reservation or sends messages to multiple places without asking. A retry rule should not silently expand authority.</p>
+<p>Now imagine dividing the task among several specialized assistants: one extracts the schedule, one checks the route, and one suggests lunch. This can be called a multi-agent workflow, but “more agents” does not mean “more reliable.” Each handoff can lose context, duplicate work, or pass along an error. A person may need a short summary of what each step assumed and what evidence it used. For a simple trip plan, one system using a few tools may be clearer than a team of AI agents.</p>
+<p>Handoffs need ownership. If a map tool cannot find the venue, should the system ask the parent? If the parent approves a draft, who is allowed to book? If a school policy is involved, who checks it? The workflow should say where the AI stops and who takes responsibility for the next step.</p>
+<p>A small set of design questions helps. What is the first reliable input? Which step depends on it? Can two steps happen independently? What could go wrong at each handoff? What evidence comes back? How many retries are reasonable? Where should uncertainty cause the workflow to pause?</p>
+<p>[Pause.] Think about a task with three or more steps. Draw arrows between them. Circle any step that changes a record, shares information, or commits money. Put a human review point before that action. Mark one condition that should make the system stop and ask.</p>
+<p>Orchestration is not just a technical diagram. It is a way to make a process legible. If you can describe the goal, the sequence, the checks, and the stop rules, you can decide whether automation is useful and where a person should intervene.</p>
+<p>In the final week, we will use these ideas to choose how much autonomy a task deserves. We will also plan what to do when the agent is wrong, because responsible use is not the belief that nothing will fail. It is designing for the possibility that it will.</p>
+<p>Here is a small design exercise using a school open house. The input is the school’s event notice. The first step extracts the date, location, and session choices. A parent checks those details against the original notice. The next step looks up a route and estimates travel time. It then drafts a calendar event. The workflow ends at the draft. If the notice is unreadable or the route service returns two possible campuses, the agent stops and asks. This sequence is easy to explain because every step depends on information that came before it.</p>
+<p>Now ask what could be parallelized. Once the address is confirmed, a route estimate and a list of nearby parking options can be gathered at the same time. But parallel steps need a combined review: are the parking details for the same campus, and are the sources current? Making a process faster can create more points where assumptions need to be reconciled.</p>
+<p>A retry should change something for a reason. If the first search returns no current parking information, one revised search may help. Repeating the same search ten times is unlikely to create better evidence. A good rule might be: try one alternate official source, then mark the detail unconfirmed and let a person decide. This makes the stopping behavior predictable.</p>
+<p>Multi-agent workflows add another layer. One helper might extract dates, another might research transportation, and a third might assemble a plan. If the date extractor misreads a notice, that error can travel to every later step. Each handoff needs enough source information for a person or later tool to check the claim. Specialized roles help only when they make the work clearer or more reliable than a simpler workflow.</p>
+<p>The design question is not “Can the process run end to end?” It is “Can someone understand what happened, catch a meaningful mistake, and stop the system before its effects spread?” For an open house, an itinerary draft may be a good endpoint. For a task involving registration, payment, or child information, a person should review before the system proceeds.</p>
+<p>[Closing: A workflow should know what to do next—and when to stop.]</p></details></div><footer>Course materials · <span id="theme-footer-label">Generic</span></footer><small class="permissions-notice">© 2026 Robert Hodgkinson. All rights reserved. Viewing permitted; reuse requires prior written permission. Contact <a href="mailto:hodgkinr@gmail.com">hodgkinr@gmail.com</a>.</small></main></div>
+<script>if(new URLSearchParams(location.search).get('embed')==='1')document.documentElement.classList.add('embed-mode');</script><script>
+(()=>{
+  const validThemes=['generic','cu-boulder','colorado-state'];
+  const labels={'generic':'Generic','cu-boulder':'CU Boulder inspired','colorado-state':'Colorado State inspired'};
+  const colors={'generic':'#34495e','cu-boulder':'#111111','colorado-state':'#1e4d2b'};
+  const params=new URLSearchParams(location.search);
+  let theme=params.get('theme');
+  if(!validThemes.includes(theme)){
+    try{theme=localStorage.getItem('course-theme')}catch(_){theme=null}
+  }
+  if(!validThemes.includes(theme))theme=document.documentElement.dataset.theme||'generic';
+  const select=document.getElementById('theme-select');
+  const withPreferences=(href)=>{
+    const target=new URL(href,location.href);
+    if(target.origin!==location.origin)return href;
+    const source=new URLSearchParams(location.search);
+    target.searchParams.set('theme',theme);
+    if(source.has('embed')&&!target.searchParams.has('embed'))target.searchParams.set('embed',source.get('embed'));
+    return target.pathname+target.search+target.hash;
+  };
+  const updateLinks=()=>document.querySelectorAll('a[href]').forEach(a=>{
+    const href=a.getAttribute('href');
+    if(!href||href.startsWith('mailto:')||href.startsWith('data:'))return;
+    try{a.setAttribute('href',withPreferences(href))}catch(_){ }
+  });
+  const apply=(next,writeUrl)=>{
+    if(!validThemes.includes(next))return;
+    theme=next;
+    document.documentElement.dataset.theme=theme;
+    if(select){select.value=theme;select.setAttribute('aria-label','Choose institutional theme');}
+    const label=document.getElementById('theme-label');if(label)label.textContent=labels[theme];
+    const footerLabel=document.getElementById('theme-footer-label');if(footerLabel)footerLabel.textContent=labels[theme];
+    const themeColor=document.querySelector('meta[name="theme-color"]');if(themeColor)themeColor.content=colors[theme];
+    try{localStorage.setItem('course-theme',theme)}catch(_){ }
+    if(writeUrl){const nextParams=new URLSearchParams(location.search);nextParams.set('theme',theme);history.replaceState(null,'',location.pathname+'?'+nextParams.toString()+location.hash)}
+    updateLinks();
+  };
+  apply(theme,false);
+  if(select)select.addEventListener('change',()=>apply(select.value,true));
+})();
+</script></body></html>

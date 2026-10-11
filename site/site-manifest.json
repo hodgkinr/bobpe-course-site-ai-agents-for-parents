@@ -1,0 +1,264 @@
+{
+  "schema_version": "1.0.0",
+  "course_id": "ai-agents-for-parents",
+  "course_version": "1.0.0",
+  "theme": "generic",
+  "modules": [
+    {
+      "id": "week-1",
+      "title": "Week 1: From Answers to Actions",
+      "order": 1,
+      "activities": [
+        {
+          "id": "week-1-lecture-1",
+          "type": "lecture",
+          "title": "Video 1: From Answers to Actions",
+          "order": 1,
+          "site_path": "modules/week-1/week-1-lecture-1/index.html",
+          "objective_ids": [
+            "identify-agent-patterns",
+            "explain-agent-harness"
+          ],
+          "asset_paths": []
+        },
+        {
+          "id": "week-1-reading-1",
+          "type": "reading",
+          "title": "A Family Calendar Helper",
+          "order": 2,
+          "site_path": "modules/week-1/week-1-reading-1/index.html",
+          "objective_ids": [
+            "identify-agent-patterns",
+            "bound-agent-workflows",
+            "set-oversight"
+          ],
+          "asset_paths": []
+        },
+        {
+          "id": "week-1-lecture-2",
+          "type": "lecture",
+          "title": "Video 2: Tools Are Capabilities, Not Magic",
+          "order": 3,
+          "site_path": "modules/week-1/week-1-lecture-2/index.html",
+          "objective_ids": [
+            "identify-agent-patterns",
+            "explain-agent-harness",
+            "set-oversight"
+          ],
+          "asset_paths": []
+        },
+        {
+          "id": "week-1-reading-2",
+          "type": "reading",
+          "title": "Homework Research Without Handing Over the Homework",
+          "order": 4,
+          "site_path": "modules/week-1/week-1-reading-2/index.html",
+          "objective_ids": [
+            "identify-agent-patterns",
+            "bound-agent-workflows",
+            "evaluate-agent-results"
+          ],
+          "asset_paths": []
+        },
+        {
+          "id": "week-1-activity",
+          "type": "assignment",
+          "title": "Map One Household Task",
+          "order": 5,
+          "site_path": "modules/week-1/week-1-activity/index.html",
+          "objective_ids": [
+            "bound-agent-workflows",
+            "set-oversight"
+          ],
+          "asset_paths": []
+        },
+        {
+          "id": "week-1-quiz",
+          "type": "quiz",
+          "title": "Week 1 Scenario Quiz",
+          "order": 6,
+          "site_path": "modules/week-1/week-1-quiz/index.html",
+          "objective_ids": [
+            "identify-agent-patterns",
+            "explain-agent-harness",
+            "bound-agent-workflows",
+            "set-oversight",
+            "evaluate-agent-results"
+          ],
+          "asset_paths": []
+        }
+      ]
+    },
+    {
+      "id": "week-2",
+      "title": "Week 2: The Harness and the Workflow",
+      "order": 2,
+      "activities": [
+        {
+          "id": "week-2-lecture-1",
+          "type": "lecture",
+          "title": "Video 3: The Harness Around the Model",
+          "order": 1,
+          "site_path": "modules/week-2/week-2-lecture-1/index.html",
+          "objective_ids": [
+            "explain-agent-harness",
+            "bound-agent-workflows"
+          ],
+          "asset_paths": []
+        },
+        {
+          "id": "week-2-reading-1",
+          "type": "reading",
+          "title": "A Family Logistics Coordinator",
+          "order": 2,
+          "site_path": "modules/week-2/week-2-reading-1/index.html",
+          "objective_ids": [
+            "explain-agent-harness",
+            "bound-agent-workflows",
+            "set-oversight",
+            "evaluate-agent-results"
+          ],
+          "asset_paths": []
+        },
+        {
+          "id": "week-2-lecture-2",
+          "type": "lecture",
+          "title": "Video 4: Orchestration, Stop Rules, and Handoffs",
+          "order": 3,
+          "site_path": "modules/week-2/week-2-lecture-2/index.html",
+          "objective_ids": [
+            "explain-agent-harness",
+            "bound-agent-workflows",
+            "evaluate-agent-results"
+          ],
+          "asset_paths": []
+        },
+        {
+          "id": "week-2-reading-2",
+          "type": "reading",
+          "title": "The Multi-Step Research Helper",
+          "order": 4,
+          "site_path": "modules/week-2/week-2-reading-2/index.html",
+          "objective_ids": [
+            "explain-agent-harness",
+            "bound-agent-workflows",
+            "evaluate-agent-results"
+          ],
+          "asset_paths": []
+        },
+        {
+          "id": "week-2-activity",
+          "type": "assignment",
+          "title": "Draw a Bounded Workflow",
+          "order": 5,
+          "site_path": "modules/week-2/week-2-activity/index.html",
+          "objective_ids": [
+            "bound-agent-workflows",
+            "set-oversight"
+          ],
+          "asset_paths": []
+        },
+        {
+          "id": "week-2-quiz",
+          "type": "quiz",
+          "title": "Week 2 Scenario Quiz",
+          "order": 6,
+          "site_path": "modules/week-2/week-2-quiz/index.html",
+          "objective_ids": [
+            "identify-agent-patterns",
+            "explain-agent-harness",
+            "bound-agent-workflows",
+            "set-oversight",
+            "evaluate-agent-results"
+          ],
+          "asset_paths": []
+        }
+      ]
+    },
+    {
+      "id": "week-3",
+      "title": "Week 3: Autonomy with Care",
+      "order": 3,
+      "activities": [
+        {
+          "id": "week-3-lecture-1",
+          "type": "lecture",
+          "title": "Video 5: Autonomy Is a Choice About Authority",
+          "order": 1,
+          "site_path": "modules/week-3/week-3-lecture-1/index.html",
+          "objective_ids": [
+            "bound-agent-workflows",
+            "set-oversight"
+          ],
+          "asset_paths": []
+        },
+        {
+          "id": "week-3-reading-1",
+          "type": "reading",
+          "title": "Choosing an Autonomy Level",
+          "order": 2,
+          "site_path": "modules/week-3/week-3-reading-1/index.html",
+          "objective_ids": [
+            "bound-agent-workflows",
+            "set-oversight",
+            "evaluate-agent-results"
+          ],
+          "asset_paths": []
+        },
+        {
+          "id": "week-3-lecture-2",
+          "type": "lecture",
+          "title": "Video 6: Oversight, Evaluation, and Recovery",
+          "order": 3,
+          "site_path": "modules/week-3/week-3-lecture-2/index.html",
+          "objective_ids": [
+            "set-oversight",
+            "evaluate-agent-results"
+          ],
+          "asset_paths": []
+        },
+        {
+          "id": "week-3-reading-2",
+          "type": "reading",
+          "title": "A Family Agreement for Trying an AI Agent",
+          "order": 4,
+          "site_path": "modules/week-3/week-3-reading-2/index.html",
+          "objective_ids": [
+            "bound-agent-workflows",
+            "set-oversight",
+            "evaluate-agent-results"
+          ],
+          "asset_paths": []
+        },
+        {
+          "id": "week-3-activity",
+          "type": "assignment",
+          "title": "Draft a Family Agent Agreement",
+          "order": 5,
+          "site_path": "modules/week-3/week-3-activity/index.html",
+          "objective_ids": [
+            "bound-agent-workflows",
+            "set-oversight"
+          ],
+          "asset_paths": []
+        },
+        {
+          "id": "week-3-quiz",
+          "type": "quiz",
+          "title": "Week 3 Scenario Quiz",
+          "order": 6,
+          "site_path": "modules/week-3/week-3-quiz/index.html",
+          "objective_ids": [
+            "identify-agent-patterns",
+            "explain-agent-harness",
+            "bound-agent-workflows",
+            "set-oversight",
+            "evaluate-agent-results"
+          ],
+          "asset_paths": []
+        }
+      ]
+    }
+  ],
+  "assets": []
+}
